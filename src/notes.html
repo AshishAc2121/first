@@ -1,0 +1,100 @@
+
+1.short terms
+
+
+             . rfc -> react  function based component.
+
+             
+
+
+2.Notes:
+                     //we have to add bootstrap links in index.html inside public folder
+                     //we make components in folder in src and then combine them in app.js  //components like navbar, form , footerdesign etc
+                     //components first letter is always capital
+                     //inside html we write javascript inside inside {};
+
+                     //events of javascript:
+                          OnChange, OnClick,
+
+                    //we have to make style object to pass css to jsx.
+
+3.Named Export or Default Export
+ 
+               //to transfer data bw two modeules in app.js
+
+
+    
+                            module 1: 
+                                   const a = "ashish";
+                                   const b = "rohan";
+                                   const c = "shivam";
+                                    export default a; // can be accessed by any name in module 2;
+                                    export {b};        //only accessed by this name only.
+                                    export {c};
+                    
+                            module 2:
+                              import  dz , {b,c} from './module2.mjs'
+                              console.log(dz);   //output default value ie. ashish;
+                              console.log b; // output the given variable value i.e rohan;
+            
+
+4.Props:
+     . props are use to render element data name (title ,) from app.js file to dedicated component.
+     . here we can use compnnents multiple times using prop feature to pass title name from app.js .
+
+       inside app.js:
+
+       <Navbar title="ashish" ></Navbar>
+
+       inside navbar component:
+             
+                export default function Navbar(props) {
+                    <a className="navbar-brand" href="/">{props.title}</a>
+                }
+
+
+        //proptypes and default props:
+
+              //proptypes: 
+                          to set type of prop received by component we set proptypes.
+
+                          Navbar.propTypes={
+                            title:PropTypes.string.isrequired,         //isrequired pass error if not found
+                            abouteText:PropTypes.string
+                         }
+
+              //default props:
+                          if we do not set any proptype in app.jx then which prop is used in place of it. 
+                     
+       
+                          Navbar.defaultProps={
+                            title:'set title here',
+                            aboutText:'About text here'
+                         }
+                    
+
+5.States:
+       .state is use for particular components.
+       .we have to make handleonchanage func with it.
+       .Hooks - as react is a function based, and to use class properteis inside function we use hooks. it is a react functionality.
+               . there are several types of hooks in react:
+                   1. useState
+
+
+       //state are imported throgh React
+                 ie:
+                 //inside component:
+            step1:      .import React,{useState} from 'react'.
+
+            step2:   
+                    const[text,setText] =useState(0);  //here text is render variable and inside setText we set the value.  //we change the value of text using setText variable.
+       
+            step3:
+                  make a on click func, and a on change funct in textbox.
+
+
+6. Router:
+ 
+                    //to move from one page to another without reloading the page we use react Router Dom.
+                    //search google react router dom.
+                    //
